@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+
+    <body>
+        <button onclick="Pop()" style="margin: 10px;"></button>
+        <div id="Placeholder" style="width: 100px; height: 100px; margin: 20%;">
+
+        </div>
+        <script>
+            //What we need:
+            //A path for the images
+            //A function that displays which image that visible
+            // When touched for the second time replace element
+
+            alert("Click the button")
+            const created_element = document.getElementById("Placeholder");
+
+            function Pop() {
+                const Image = [
+                    "/Users/jakob0711/Documents/Pick_image/Img1.jpeg",
+                    "/Users/jakob0711/Documents/Pick_image/Img2.jpeg",
+                    "/Users/jakob0711/Documents/Pick_image/Img3.jpeg",
+                    "/Users/jakob0711/Documents/Pick_image/Img4.jpg"
+                    ];
+
+                const element = document.createElement("img");
+                element.src = Image[Math.floor(Math.random() * Image.length)];
+                element.id = "This_image";
+                console.log(element)
+                created_element.appendChild(element)
+                console.log(created_element.childNodes)
+
+                setInterval (function r() {
+                    element.src = Image[Math.floor(Math.random() * Image.length)];
+
+                }, 5000)
+            }
+
+            
+
+            
+
+
+            
+
+           
+        </script>
+    </body>
+</html>
